@@ -183,7 +183,7 @@ class xMCA:
 
         """
 
-        Cxy = xr.cov(left, right)
+        Cxy = xr.cov(left, right, dim='time')
         U, s, V = np.linalg.svd(Cxy, full_matrices=False)
         # U column is eigenvectors for left, V column is for right
         V = V.T
